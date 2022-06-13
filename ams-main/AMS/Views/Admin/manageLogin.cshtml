@@ -1,0 +1,107 @@
+﻿@model IEnumerable<AMS.Models.Login>
+
+@{
+    ViewBag.Title = "manageLogin";
+    string[] mArr = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+    DateTime dt = DateTime.Today;
+    int year = dt.Year, month = dt.Month;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/viewAtdReport.css" rel="stylesheet" />
+<link href="~/Content/aminPanal.css" rel="stylesheet" />
+<style>
+    .atd-table p{
+        text-align:left;
+        font-weight:bolder;
+        font-size:larger;
+        border-radius:5px;
+        background:#0a3d62;
+        padding:10px;
+        box-shadow: 1px 3px 10px 5px #222f3e;
+    }
+</style>
+
+<div class="main">
+    <ul class="sidebar">
+        <li class="list">
+            <input type="button"
+                   value="Admin"
+                   id="viewAllEmployeeAttendance"
+                   class="btn btn-link btn-md"
+                   onclick="location.href='@Url.Action("Index", "Admin")'" />
+        </li>
+        <li class="list">
+            <input type="button"
+                   value="Monthly Attendance Report"
+                   id="viewAllEmployeeAttendance"
+                   class="btn btn-link btn-md"
+                   onclick="location.href='@Url.Action("viewAllEmployeeAttendance", "Admin", new {y = year, m = month})'" />
+        </li>
+
+        <li class="list">
+            <input type="button"
+                   value="Employee Info"
+                   id="viewAllEmployeeAttendance"
+                   class="btn btn-link btn-md"
+                   onclick="location.href='@Url.Action("manageLogin", "Admin")'" />
+        </li>
+        <li class="list">
+            <input type="button"
+                   value="Manage Employee Leave"
+                   id="viewAllEmployeeLeave"
+                   class="btn btn-link btn-md"
+                   onclick="location.href='@Url.Action("Leave", "Admin")'" />
+        </li>
+        <li class="list">
+            <input type="button"
+                   value="Log Out!"
+                   id="viewAllEmployeeLeave"
+                   style="background-color:#170e0e; color:white"
+                   class="btn btn-link btn-md"
+                   onclick="location.href='@Url.Action("logout", "Admin")'" />
+        </li>
+    </ul>
+    @* SIDEBAR NAVIGATION END!! *@
+    <div class="atd-table">
+        <h2>Employee Login Details</h2>
+        <hr width="60%"/>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.userId)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.password)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.userTypeId)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.userId)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.password)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.userTypeId)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.userId }) |
+                        @Html.ActionLink("Details", "currMonthEmpDetails", new { empId = item.userId, y = year, m = month }) |
+                        @Html.ActionLink("Delete", "DeleteUser", new { id = item.userId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "filterByYearMonth";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: #34495e;
+    }
+
+    .container {
+        margin-top: 100px;
+        width: 40%;
+        height: 350px;
+        background: #2d3436;
+        border-radius: 8px;
+        box-shadow: 0px 0px 8px 0px #cef86b;
+    }
+
+    .heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wraper {
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+        .wraper input[type="number"] {
+            color: white;
+            outline: none;
+            text-align: center;
+            border: 2px solid #2ecc71;
+            transition: 0.25s;
+        }
+
+            .wraper input[type="number"]:focus {
+                border-color: #3498db;
+            }
+
+    .redirectbar {
+        margin-top: 5px;
+        font-size: large;
+        position: absolute;
+        color: #d63031;
+    }
+</style>
+<div class="container">
+    <div class="heading">
+        <div class="wraper">
+            @using (Html.BeginForm("filterByYearMonth", "Admin", FormMethod.Post))
+            {
+                <input type="number" name="y" id="y" placeholder="Year" required style="width: 300px; padding: 15px; margin: 10px;" min="2020" max="2050" /><br />
+                <input type="number" name="m" id="m" placeholder="Month" required style="width: 300px; padding: 15px; margin: 10px;" min="1" max="12" /><br />
+                <input class="btn btn-primary" type="submit" value="Filter" style="width: 300px; padding: 15px; margin: 10px;" />
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="redirectbar">
+            @Html.ActionLink("Back to Home", "Index", "Admin", null, null)
+        </div>
+    </div>
+</div>
+
+

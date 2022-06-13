@@ -1,0 +1,90 @@
+﻿@model IEnumerable<AMS.Models.Leave>
+
+@{
+    ViewBag.Title = "AllTimeLeave";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/viewAtdReport.css" rel="stylesheet" />
+<style>
+     body{
+        margin:0;
+        padding:0;
+        font-family:sans-serif;
+        background:#34495e;
+    }
+     h2{
+         text-align:center;
+         color:white;
+         font-weight:bold;
+         font-variant:inherit;
+         margin-top:15px;
+         color:#e58e26;
+     }
+     h5{
+        text-align:center;
+         color:white;
+         font-weight:bold;
+         font-variant:inherit;
+         margin-top:15px;
+     }
+      .redirectbar {
+        margin-top: 10px;
+        margin-left:15px;
+        font-size: large;
+        position: absolute;
+        color: #d63031;
+    }
+</style>
+
+<h2>Leave Report</h2>
+<h5>Leave data of all employees</h5>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.empId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.leave_apply_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.leave_start_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.num_leave_days)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.leave_reason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.leave_status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.empId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.leave_apply_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.leave_start_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.num_leave_days)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.leave_reason)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.leave_status)
+        </td>
+    </tr>
+}
+
+</table>
+<div class="redirectbar">
+    @Html.ActionLink("Back to Leave", "Leave", "Admin", null, null)
+</div>

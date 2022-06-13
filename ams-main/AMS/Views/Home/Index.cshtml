@@ -1,0 +1,129 @@
+﻿
+@using AMS.Models
+@model Login
+@{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+    {
+        Text = "Employee",
+        Value = "1",
+        Selected = true
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Admin",
+        Value = "0"
+    });
+}
+
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<style>
+    body{
+        margin:0;
+        padding:0;
+        font-family:sans-serif;
+        background:#34495e;
+    }
+    .loginPage h2{
+        text-align:center;
+        color:#fdcb6e;
+        font-weight:bold;
+    }
+    .login{
+        width:500px;
+        padding:40px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        background:#191919;
+        text-align:center;
+        border-radius:5px;
+        box-shadow: 5px 2px 8px 5px #2d3436;
+    }
+    .login h3{
+        color:white;
+        text-transform:uppercase;
+        font-weight:500;
+    }
+    .login .input{
+        border:0;
+        background:none;
+        display:block;
+        margin:20px auto;
+        text-align:center;
+        border:2px solid #3498db; 
+        padding:14px;
+        width:200px;
+        outline:none;
+        color:#636e72;
+        border-radius:24px;
+        transition:0.25s;
+
+    }
+    .login span{
+        color:white;
+    }
+    .login .input:focus{
+        width:280px;
+        border-color:#2ecc71;
+    }
+    .login input[type="submit"]{
+         border:0;
+        background:none;
+        display:block;
+        margin:20px auto;
+        text-align:center;
+        border:2px solid #2ecc71; 
+        padding:14px 40px;
+        width:200px;
+        outline:none;
+        color:#636e72;
+        border-radius:24px;
+        transition:0.25s;
+        cursor:pointer;
+    }
+    .login input[type="submit"]:hover{
+        background:#2ecc71;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="loginPage">
+                <h2>Employee Attendance Portal</h2>
+                <div class="login">
+                    <h3>Login</h3>
+                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                    {
+                        @Html.Hidden("returnUrl", Request.Url.ToString())
+
+                        <br />
+                        <form>
+                            <label>
+                                @Html.TextBoxFor(m => m.userId, new { placeholder = "Login id", @class = "input" })
+                            </label><br>
+                            <label>
+                                @Html.TextBoxFor(m => m.password, new { placeholder = "Password", @class = "input" })
+                            </label> <br>
+                            <label>
+                               <span>Login As:</span> 
+                                @Html.DropDownListFor(m => m.userTypeId, listItems, "-- Select Status --", new { @class = "input" })
+                            </label>
+                            <br />
+                            <input type="submit" />
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+

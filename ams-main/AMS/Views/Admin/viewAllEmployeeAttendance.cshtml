@@ -1,0 +1,123 @@
+﻿
+@model IEnumerable<AMS.Models.AttendanceReport>
+    @{ 
+        string[] mArr = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+        int year = ViewBag.year, month = ViewBag.month;
+    }
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/viewAtdReport.css" rel="stylesheet" />
+<link href="~/Content/aminPanal.css" rel="stylesheet" />
+
+<style>
+      .redirectbar {
+        margin-top: 10px;
+        margin-left:15px;
+        font-size: large;
+        position: absolute;
+        color: #d63031;
+    }
+</style>
+
+<div class="main">
+    <ul class="sidebar">
+        <li class="list">
+            <input type="button"
+                   value="Admin"
+                   id="viewAllEmployeeAttendance"
+                   class="btn btn-link btn-md"
+                   onclick="location.href='@Url.Action("Index", "Admin")'" />
+        </li>
+        <li class="list">
+            <input type="button"
+                   value="Monthly Attendance Report"
+                   id="viewAllEmployeeAttendance"
+                   class="btn btn-link btn-md"
+                   onclick="location.href='@Url.Action("viewAllEmployeeAttendance", "Admin", new {y = year, m = month})'" />
+        </li>
+
+        <li class="list">
+            <input type="button"
+                   value="Employee Info"
+                   id="viewAllEmployeeAttendance"
+                   class="btn btn-link btn-md"
+                   onclick="location.href='@Url.Action("manageLogin", "Admin")'" />
+        </li>
+        <li class="list">
+            <input type="button"
+                   value="Manage Employee Leave"
+                   id="viewAllEmployeeLeave"
+                   class="btn btn-link btn-md"
+                   onclick="location.href='@Url.Action("Leave", "Admin")'" />
+        </li>
+        <li class="list">
+            <input type="button"
+                   value="Log Out!"
+                   id="viewAllEmployeeLeave"
+                   style="background-color:#170e0e; color:white"
+                   class="btn btn-link btn-md"
+                   onclick="location.href='@Url.Action("logout", "Admin")'" />
+        </li>
+    </ul>
+    @* SIDEBAR NAVIGATION END!! *@
+ 
+        <div class="atd-table">
+
+            <h2 class="text-center">Employee Attendance Report</h2>
+            <h3 class="text-center">@mArr[month - 1] - @year</h3>
+            <table class="table table-striped">
+                <tr>
+                    <th>
+                        Employee Id
+                    </th>
+
+                    <th>
+                        Present
+                    </th>
+                    <th>
+                        Leave
+                    </th>
+                    <th>
+                        Absent
+                    </th>
+                    <th>
+                        Holidays
+                    </th>
+                    <th></th>
+                </tr>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @*@Html.ActionLink((string)@Html.DisplayFor(modelItem => item.empId), "currMonthEmpDetails", new { empId = item.empId })*@
+                            <a href="@Url.Action("currMonthEmpDetails", "Admin", new { empId = item.empId, y = year, m = month})">@item.empId</a>
+                            
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.presentDays)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.leaveDays)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.absentDays)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.holidays)
+                        </td>
+                    </tr>
+                }
+            </table>
+                <input type="button"
+                    class="btn btn-primary"
+                    value="Filter By Year and Month"
+                    onclick= "location.href='@Url.Action("filterByYearMonth", "Admin")'"/>
+        
+        </div>
+</div>
+<div class="redirectbar">
+    @Html.ActionLink("Back to Home", "Index", "Admin", null, null)
+</div>

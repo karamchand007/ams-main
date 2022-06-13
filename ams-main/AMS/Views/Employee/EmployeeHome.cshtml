@@ -1,0 +1,113 @@
+﻿@model AMS.Models.Employee
+
+@{
+    ViewBag.Title = "EmployeeHome";
+    DateTime dte = DateTime.Today;
+    string year = dte.Year.ToString();
+    int month = dte.Month;
+    string[] mArr = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+}
+
+<link href="@Url.Content("~/content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link href="~/Content/EmployeeHome.css" rel="stylesheet" />
+
+@*//attendance section for employee ==============================*@
+<div class="container-fluid">
+    <div class="row">
+        <div class="title">
+            <h2 class="text-center">Employee Attendance Portal  </h2>
+        </div>
+    </div>
+    <div class="row mt-4 align-items-center">
+        <div class="col-lg-10 offset-1">
+            <div class="header">
+                <h1 class="text-center">@ViewBag.empName</h1>
+                <h2 class="text-center">@Session["userId"].ToString()</h2>
+            </div>
+        </div>
+        <div class="col-lg-1">
+            <div class="logOut">
+                <input type="button" value="Log out"
+                       class="btn btn-danger"
+                       onclick="location.href='@Url.Action("logout", "Employee")'" />
+            </div>
+        </div>
+    </div>
+    <div class="row m-4">
+        <div class="col">
+            <div class="markAttd">
+                <h2 class="text-center">Mark Your Attendance</h2>
+                <div class="btn-container">
+                    <div>
+                        <input type="button"
+                               value="Attendance Login"
+                               id="btnLogin"
+                               style=""
+                               class="btn btn-success"
+                               onclick="location.href='@Url.Action("AttendanceLogin", "Employee")'" />
+                    </div>
+                    <div>
+                        <input type="button"
+                               value="Attendance Logout"
+                               id="btnLogout"
+                               style=""
+                               class="btn btn-primary"
+                               onclick="location.href='@Url.Action("AttendanceLogout", "Employee")'" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row homeLeaveAttd align-items-center">
+        <div class="col-lg-5 offset-1">
+            @*// Leave ============================================*@
+            <div class="report-sec1">
+                <div class="container bg-secondary text-white">
+                    <h2>Apply For Leave</h2>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div>
+                                <input type="button"
+                                       value="Apply for leave"
+                                       id="leaveApplybtn"
+                                       class="btn btn-primary btn-lg m-5 p-5"
+                                       onclick="location.href='@Url.Action("LeaveApply", "Employee")'" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            @*Apply for leave section is here===================================*@
+            <div class="report-sec2">
+                <div class="container bg-secondary text-white">
+                    <h2>View Attendance Report</h2>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div>
+                                <input type="button"
+                                       value="Attendance Report"
+                                       id="viewAtdReport"
+                                       class="btn btn-primary btn-lg m-5 p-5"
+                                       onclick="location.href='@Url.Action("viewAtdReport", "Employee", new {y = year, m = month})'" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main ">
+            <div class="container">
+                <div class="row homeLeaveAttd">
+
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

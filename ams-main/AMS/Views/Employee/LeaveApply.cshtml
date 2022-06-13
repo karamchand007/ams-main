@@ -1,0 +1,143 @@
+﻿
+@model AMS.Models.Leave
+@{
+    ViewBag.Title = "LeaveApply";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/LeaveApply.css" rel="stylesheet" />
+<style>
+    body{
+        margin:0;
+        padding:0;
+        font-family:sans-serif;
+        background:#34495e;
+    }
+    .container{
+    margin-top:50px;
+    width:70%;
+    height:500px;
+    background:#2d3436;
+    border-radius:8px;
+    box-shadow:0px 0px 8px 0px #cef86b;
+}
+    .bhead{
+   margin:10px;
+   text-align:center;
+   font-size:medium;
+   font-weight:bold;
+   color:white;
+}
+    .subhead{
+    margin-left:10px;
+    text-align:center;
+    font-size:large;
+    font-weight:bold;
+    color:#ff6a00;
+}
+       .bcontent{
+        display:flex;
+        text-align:center;
+        position:relative;
+    }
+       .bcontent span{
+           text-align:center;
+           margin-left:100px;
+           padding:8px;
+           align-items:center;
+           color:white;
+       }
+        .bcontent input[type="text"],input[type="DATE"],input[type="number"]{
+        border:0;
+        background:none;
+        display:inline-flex;
+        margin:10px auto;
+        justify-content:flex-end;
+        text-align:center;
+        border:2px solid #3498db; 
+        padding:14px;
+        width:300px;
+        outline:none;
+        color:white;
+        border-radius:24px;
+        transition:0.25s;
+
+    }
+        .bcontent input[type="text"]:focus,input[type="DATE"]:focus,input[type="number"]:focus{
+        border-color:#2ecc71;
+    }
+        .bcontent input[type="submit"]{
+        border:0;
+        background:none;
+        display:inline-flex;
+        position:absolute;
+        margin:15px auto;
+        text-align:center;
+        border:2px solid #2ecc71; 
+        padding:14px 40px;
+        width:200px;
+        outline:none;
+        color:white;
+        border-radius:24px;
+        transition:0.25s;
+        cursor:pointer;
+    }
+    .bcontent input[type="submit"]:hover{
+        background:#2ecc71;
+    }
+    .bcontent .redirectbar{
+    margin-top:50px;
+    font-size:large;
+    position:absolute;
+    color:#d63031;
+}
+</style>
+<div class="container">
+    <div class="row bhead">
+        <div class="col">
+            <h2>Leave Apply</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+                <div class="subhead"> Employee id : @ViewBag.empId</div>
+            </div>
+        </div>
+    <div class="row mt-3">
+        <div class="col bcontent">
+                @using (Html.BeginForm("SendLeaveApplication", "Employee", FormMethod.Post))
+                {
+
+                    <div class="form ">
+                        <form>
+                            <label>
+                                <span>Reason For Leave: </span> @Html.TextBoxFor(m => m.leave_reason,
+                                                 new { placeholder = "Enter the reason for leave", type = "text" })
+                            </label> <br />
+                            <label>
+                                <span>Leave Start Date:</span> @Html.TextBoxFor(m => m.leave_start_date,
+                                               new { placeholder = "DATE", type = "DATE" })
+                            </label><br />
+                            <label>
+                               <span>Number Of Days:</span>  @Html.TextBoxFor(m => m.num_leave_days,
+                                   new { placeholder = "Number of days for leave", type = "number" }) <br />
+                            </label><br />
+                           <input type="submit"
+                                    value="Apply for leave"
+                                    id="leaveApplybtn"
+                                    class="btn btn-primary btn-lg" /><br />
+
+                            <div class="redirectbar">
+                                @Html.ActionLink("Back to Home", "EmployeeHome", "Employee", null, null)
+                            </div>
+                        </form>
+                        
+                    </div>
+
+                }
+            </div>
+        </div>
+   
+    </div>
+
+
+

@@ -1,0 +1,120 @@
+﻿
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*html,body{
+   height: 100%;
+}
+.loginPage, .leavePage {
+    margin: 0 auto;
+    width: 50%;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  
+}
+
+.loginPage form{
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #e85a0e;
+    color: white;
+    font-size: 1em;
+    box-shadow: 5px 5px 3px #be7751;
+    border-radius: 5px;
+   
+}
+.loginPage, .leavePage label{
+    padding: 10px;
+}
+.loginPage, .leavePage h3, h2{
+    font-size: 32px;
+    font-weight: bolder;
+}
+.leavePage form{
+       margin: 10px auto;
+    padding: 20px;
+    background-color: #e85a0e;
+    color: white;
+    font-size: 1.5em;
+    box-shadow: 5px 5px 3px #be7751;
+    border-radius: 5px;
+}*/
+.msg{
+    height: 90vh;
+     display:flex;
+    justify-content:center;
+    align-items:center;
+   margin: 0 auto;
+}
+.msg .error{
+    padding: 20px;
+    background-color: rgb(255,0,0);
+    color:white;
+    font-weight:bolder;
+}
+.msg .warning{
+    padding: 20px;
+    background-color: greenyellow;
+    color:white;
+    font-weight:bolder;
+}
+.msg .success{
+    padding: 20px;
+    background-color:green;
+    color:white;
+    font-weight:bolder;
+}
+
+
+/*.sidebar{
+    padding: 5px;
+    background-color: red;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    margin-bottom: 50px; 
+    width: 100%;
+}
+.sidebar .list{
+    display: inline;
+    margin-left: 10px;
+}
+ .sidebar .btn-link{
+    color:white;
+    background-color:blue;
+    margin: 3px;
+    opacity: 1;
+    transition:0.4s;
+}
+.btn-link:hover, .btn-link:focus{
+    opacity: 0.9;
+
+}
+.atd-table{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid red;
+}
+.atd-table input{
+    margin: 5px auto;
+    text-align:center;
+}
+.link-dashboard{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin: 5px auto;
+}
+
+@media (max-width: 600px){
+    .loginPage{
+        width:100%;
+    }*/
+
+
+

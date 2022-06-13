@@ -1,0 +1,167 @@
+﻿@model IEnumerable<AMS.Models.Attendance>
+@*@model IEnumerable<AMS.Models.Attendance>*@
+@{
+    ViewBag.Title = "Admin Page";
+    DateTime dt = DateTime.Today;
+    int month = dt.Month;
+    int year = dt.Year;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/viewAtdReport.css" rel="stylesheet" />
+
+<style>
+     body{
+        margin:0;
+        padding:0;
+        font-family:sans-serif;
+        background:#34495e;
+    }
+    .sidebar{
+        padding: 5px;
+        background-color:#f39c12; /*#e67e22;*/
+        display:flex;
+        flex-direction:row;
+        justify-content:space-around;
+        align-items:center;
+        margin-bottom: 50px; 
+        width: 100%;
+    }
+
+    .sidebar .list{
+         display: inline;
+        margin: 3px 10px;
+        
+    }
+    .sidebar .btn-link{
+        color:white;
+        background-color:#218c74;
+        margin: 3px;
+        opacity: 1;
+        transition:0.4s;
+        text-decoration:none;
+        transition:0.25s;
+     }
+    .btn-link:hover, btn-link:focus{
+        box-shadow: 2px 3px 10px 5px #33d9b2;
+        opacity: 0.9;
+    }
+    .atd-table{
+         display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        margin: 0 auto;
+        width: 80%;
+        color:white;
+    }
+    .table td a{
+        text-decoration:none;
+    }
+    /*.atd-table input{
+        margin: 5px auto;
+        text-align:center;
+    }
+    .link-dashboard{
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        margin: 5px auto;
+}*/
+</style>
+
+<div class="main">
+  
+
+        @* SIDEBAR NAVIGATION *@
+      
+            <ul class="sidebar">
+                <li class="list">
+                    <input type="button"
+                           value="Admin"
+                           id="viewAllEmployeeAttendance"
+                           class="btn btn-link btn-md"
+                           onclick="location.href='@Url.Action("Index", "Admin")'" />
+                </li>
+                <li class="list">
+                    <input type="button"
+                           value="Monthly Attendance Report"
+                           id="viewAllEmployeeAttendance"
+                           class="btn btn-link btn-md"
+                           onclick="location.href='@Url.Action("viewAllEmployeeAttendance", "Admin", new {y = year, m = month})'" />
+                </li>
+
+                <li class="list">
+                    <input type="button"
+                           value="Employee Info"
+                           id="viewAllEmployeeAttendance"
+                           class="btn btn-link btn-md"
+                           onclick="location.href='@Url.Action("manageLogin", "Admin")'" />
+                </li>
+                <li class="list">
+                    <input type="button"
+                           value="Manage Employee Leave"
+                           id="viewAllEmployeeLeave"
+                           class="btn btn-link btn-md"
+                           onclick="location.href='@Url.Action("Leave", "Admin")'" />
+                </li>
+                <li class="list">
+                    <input type="button"
+                           value="Log Out!"
+                           id="viewAllEmployeeLeave"
+                           style="background-color:#170e0e; color:white"
+                           class="btn btn-link btn-md"
+                           onclick="location.href='@Url.Action("logout", "Admin")'" />
+                </li>
+            </ul>
+         @* SIDEBAR NAVIGATION END!! *@
+
+        @*All users present day attendance*@
+    <div class="atd-table">
+        <h3 class="text-center">Today Attendance Report</h3>
+        <hr width="60%"/>
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Employee_id)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.loginTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.logoutTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AttendanceStatus)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("currMonthEmpDetails", "Admin", new { empId = item.Employee_id, y = year, m = month})">@item.Employee_id</a>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.loginTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.logoutTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AttendanceStatus)
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+    
+        @*All users present day attendance <DIV> END!!*@
+
+</div>
+
+

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<AMS.Models.Attendance>
+
+@{
+    ViewBag.Title = "viewAtdReport";
+    DateTime dte = DateTime.Today;
+    string year = ViewBag.year.ToString();
+    int month = Convert.ToInt32(ViewBag.month);
+    string[] mArr = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/viewAtdReport.css" rel="stylesheet" />
+<style>
+      body{
+        margin:0;
+        padding:0;
+        font-family:sans-serif;
+        background:#34495e;
+    }
+      .header{
+          color:white;
+          text-align:center;
+          font-weight:bold;
+          margin-top:10px;
+      }
+    .redirectbar {
+        font-size: large;
+        position: absolute;
+        color: #d63031;
+        text-align:right;
+        position:center;
+    }
+</style>
+<div class="header">
+    <h2>Your @mArr[@month - 1] - @year Attendance Report</h2>
+</div>
+
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Employee_id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.loginTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.logoutTime)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.AttendanceStatus)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employee_id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.loginTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.logoutTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AttendanceStatus)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <input type="button"
+                   value="Filter by year and month"
+                   id="btnLogout"
+                   style=""
+                   class="btn btn-primary"
+                   onclick="location.href='@Url.Action("filterYearMonth", "Employee")'" />
+        </div>
+        <div class="col-md-7 offset-3 me-0 redirectbar">
+                @Html.ActionLink("Back to Home", "EmployeeHome", "Employee", null, null)
+        </div>
+    </div>
+</div>
+
+

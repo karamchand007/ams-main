@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "messageHandler";
+}
+<style>
+     body{
+        margin:0;
+        padding:0;
+        font-family:sans-serif;
+        background:#34495e;
+    }
+     .container{
+         top:-50%;
+         left:-50%;
+     }
+     .redirectbar{
+        margin-top:5px;
+        font-size:large;
+        color:yellow;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="msg">
+            @if (ViewBag.messageType == "error")
+            {
+                <h1 class="error">@ViewBag.message !!</h1><br />
+               
+
+            }
+            else if (ViewBag.messageType == "warning")
+            {
+                <h1 class="warning">@ViewBag.message !</h1><br />
+
+            }
+            else
+            {
+                <h1 class="success">@ViewBag.message</h1>
+                <br />
+   
+            }
+        </div>
+    </div>
+   
+    <div class="row">
+        <div>
+            @if (Convert.ToString(Session["userTypeId"]) == "1")
+            {
+                @Html.ActionLink("Back to Home", "EmployeeHome", "Employee", null, new { @class = "redirectbar" })
+            }
+            else
+            {
+                @Html.ActionLink("Back to Home", "Index", "Admin", null, new { @class = "redirectbar" })
+            }
+        </div>
+    </div>
+</div>
+
+
+ 
+
