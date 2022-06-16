@@ -44,7 +44,8 @@ namespace AMS.Controllers
                         }
                         Attendance d = new Attendance();
 
-                        d.Employee_id = Convert.ToString(dt.Rows[i]["userId"]);
+                        d.Employee_id = Convert.ToString(dt.Rows[i]["EmpId"]);
+                        d.empName = Convert.ToString(dt.Rows[i]["Name"]);
                         d.loginTime = Convert.ToString(dt.Rows[i]["loginTime"]);
                         d.logoutTime = Convert.ToString(dt.Rows[i]["logoutTime"]);
                         d.AttendanceStatus = atdStat;
@@ -79,7 +80,8 @@ namespace AMS.Controllers
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         AttendanceReport d = new AttendanceReport();
-                        d.empId = Convert.ToString(dt.Rows[i]["empId"]);
+                        d.empId = Convert.ToString(dt.Rows[i]["EmpId"]);
+                        d.empName = Convert.ToString(dt.Rows[i]["Name"]);
                         if (Convert.ToString(dt.Rows[i]["present"]) == "")
                             d.presentDays = "0";
                         else
@@ -132,7 +134,8 @@ namespace AMS.Controllers
                     {
                         Login d = new Login();
                         d.userId = Convert.ToString(dt.Rows[i]["userId"]);
-                        d.password = Convert.ToString(dt.Rows[i]["password"]);
+                        d.empName = Convert.ToString(dt.Rows[i]["Name"]);
+                        //d.password = Convert.ToString(dt.Rows[i]["password"]);
                         d.userTypeId = Convert.ToString(dt.Rows[i]["userTypeId"]);
                         obj.Add(d);
                     }
@@ -314,10 +317,11 @@ namespace AMS.Controllers
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         Leave d = new Leave();
-                        d.leaveId = Convert.ToString(dt.Rows[i]["leaveId"]);
+                        //d.leaveId = Convert.ToString(dt.Rows[i]["leaveId"]);
                         d.empId = Convert.ToString(dt.Rows[i]["empId"]);
-                        d.leave_apply_date = Convert.ToString(dt.Rows[i]["leave_apply_date"]);
-                        d.leave_start_date = Convert.ToString(dt.Rows[i]["leave_start_date"]);
+                        d.empName = Convert.ToString(dt.Rows[i]["Name"]);
+                        d.leave_apply_date = Convert.ToString(dt.Rows[i]["leave_apply_date"]).Substring(0,10);
+                        d.leave_start_date = Convert.ToString(dt.Rows[i]["leave_start_date"]).Substring(0,10);
                         d.num_leave_days = Convert.ToString(dt.Rows[i]["num_leave_days"]);
                         d.leave_reason = Convert.ToString(dt.Rows[i]["leave_reason"]);
                         obj.Add(d);
@@ -343,8 +347,9 @@ namespace AMS.Controllers
                         Leave d = new Leave();
                         d.leaveId = Convert.ToString(dt.Rows[i]["leaveId"]);
                         d.empId = Convert.ToString(dt.Rows[i]["empId"]);
-                        d.leave_apply_date = Convert.ToString(dt.Rows[i]["leave_apply_date"]);
-                        d.leave_start_date = Convert.ToString(dt.Rows[i]["leave_start_date"]);
+                        d.empName = Convert.ToString(dt.Rows[i]["Name"]);
+                        d.leave_apply_date = Convert.ToString(dt.Rows[i]["leave_apply_date"]).Substring(0,10);
+                        d.leave_start_date = Convert.ToString(dt.Rows[i]["leave_start_date"]).Substring(0,10);
                         d.num_leave_days = Convert.ToString(dt.Rows[i]["num_leave_days"]);
                         d.leave_reason = Convert.ToString(dt.Rows[i]["leave_reason"]);
                         d.leave_status = Convert.ToString(dt.Rows[i]["leave_status"]);

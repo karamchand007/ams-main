@@ -10,6 +10,9 @@ namespace AMS.Models
     {
         [DisplayName("Employee ID")]
         public string Employee_id { get; set; }
+        
+        [DisplayName("Employee Name")]
+        public string empName { get; set; }
 
         [DisplayName("Date")]
         public string Date { get; set; }

@@ -12,6 +12,9 @@ namespace AMS.Models
         [DisplayName("User ID")]
         public string userId { get; set; }
 
+        [DisplayName("Employee Name")]
+        public string empName { get; set; }
+
         [DisplayName("Password")]
         public string password { get; set; }
 

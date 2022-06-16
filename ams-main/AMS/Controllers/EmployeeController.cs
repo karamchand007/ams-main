@@ -119,9 +119,9 @@ namespace AMS.Controllers
                         }
                         Attendance d = new Attendance();
                         d.Employee_id = Convert.ToString(dt.Rows[i]["Employee_id"]);
-                        d.Date = Convert.ToString(dt.Rows[i]["Date"]);
-                        d.loginTime = Convert.ToString(dt.Rows[i]["loginTime"]);
-                        d.logoutTime = Convert.ToString(dt.Rows[i]["logoutTime"]);
+                        d.Date = Convert.ToString(dt.Rows[i]["Date"]).Substring(0,10);
+                        d.loginTime = Convert.ToString(dt.Rows[i]["loginTime"]).Substring(11);
+                        d.logoutTime = Convert.ToString(dt.Rows[i]["logoutTime"]).Substring(11);
                         d.AttendanceStatus = atdStat;
                         obj.Add(d);
 

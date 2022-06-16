@@ -14,6 +14,8 @@ namespace AMS.Models
         public string leaveId { get; set; }
         [DisplayName("Employee ID")]
         public string empId { get; set; }
+        [DisplayName("Employee Name")]
+        public string empName { get; set; }
         [DisplayName("Leave Apply Date")]
         public string leave_apply_date { get; set; }
         [DisplayName("Leave Start Date")]

@@ -19,6 +19,13 @@
         padding:10px;
         box-shadow: 1px 3px 10px 5px #222f3e;
     }
+    .redirectbar {
+        margin-top: 10px;
+        margin-left:15px;
+        font-size: large;
+        position: absolute;
+        color: #d63031;
+    }
 </style>
 
 <div class="main">
@@ -73,9 +80,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.userId)
                 </th>
-                @*<th>
-                    @Html.DisplayNameFor(model => model.password)
-                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.empName)
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.userTypeId)
                 </th>
@@ -88,9 +95,9 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.userId)
                     </td>
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.password)
-                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.empName)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.userTypeId)
                     </td>
@@ -104,4 +111,8 @@
 
         </table>
     </div>
+</div>
+
+<div class="redirectbar">
+    @Html.ActionLink("Back to Home", "Index", "Admin", null, null)
 </div>

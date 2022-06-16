@@ -93,7 +93,13 @@
         border-bottom-left-radius: 5px;
         background-color: aliceblue;
     }
-
+    .redirectbar {
+        margin-top: 10px;
+        margin-left:15px;
+        font-size: large;
+        position: absolute;
+        color: #d63031;
+    }
 </style>
 @* Navbar *@
 <ul class="sidebar">
@@ -242,4 +248,7 @@
 
         </div>
     </div>
+</div>
+<div class="redirectbar">
+    @Html.ActionLink("Back to Manage Login", "manageLogin", "Admin", null, null)
 </div>

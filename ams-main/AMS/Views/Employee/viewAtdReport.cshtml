@@ -39,9 +39,6 @@
         <table class="table">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Employee_id)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.Date)
                 </th>
                 <th>
@@ -59,9 +56,6 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Employee_id)
-                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Date)
                     </td>

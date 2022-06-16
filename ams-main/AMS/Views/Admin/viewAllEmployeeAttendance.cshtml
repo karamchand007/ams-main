@@ -70,7 +70,9 @@
                     <th>
                         Employee Id
                     </th>
-
+                    <th>
+                        Employee Name
+                    </th>
                     <th>
                         Present
                     </th>
@@ -94,6 +96,9 @@
                             @*@Html.ActionLink((string)@Html.DisplayFor(modelItem => item.empId), "currMonthEmpDetails", new { empId = item.empId })*@
                             <a href="@Url.Action("currMonthEmpDetails", "Admin", new { empId = item.empId, y = year, m = month})">@item.empId</a>
                             
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.empName)
                         </td>
 
                         <td>

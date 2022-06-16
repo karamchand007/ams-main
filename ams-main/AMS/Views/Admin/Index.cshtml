@@ -124,6 +124,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Employee_id)
                 </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.empName)
+                </th>
 
                 <th>
                     @Html.DisplayNameFor(model => model.loginTime)
@@ -142,6 +145,9 @@
                 <tr>
                     <td>
                         <a href="@Url.Action("currMonthEmpDetails", "Admin", new { empId = item.Employee_id, y = year, m = month})">@item.Employee_id</a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.empName)
                     </td>
 
                     <td>

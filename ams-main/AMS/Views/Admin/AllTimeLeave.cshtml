@@ -44,6 +44,9 @@
             @Html.DisplayNameFor(model => model.empId)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.empName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.leave_apply_date)
         </th>
         <th>
@@ -65,6 +68,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.empId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.leave_apply_date)

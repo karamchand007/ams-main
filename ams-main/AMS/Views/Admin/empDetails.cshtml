@@ -6,7 +6,25 @@
     int month = Convert.ToInt32(ViewBag.month);
     string[] mArr = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 }
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/aminPanal.css" rel="stylesheet" />
 <style type="text/css">
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        font-family: arial;
+    }
+
+    h2, h3 {
+        font-size: 20px;
+        color: #dcdde1;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
     table {
         width: 70%;
         border-collapse: collapse;
@@ -19,14 +37,15 @@
         border: 2px solid dimgray;
         border-radius: 5px;
     }
-    center table td{
+
+    td {
         font-size: 22px;
-        font-weight:bold;
+        font-weight: bolder;
     }
 
     th {
         text-align: left;
-        font-size: 22px;
+        font-size: 18px;
         background-color: #838996;
         background-image: linear-gradient(dimgray,gray,#838996);
         color: white;
@@ -44,15 +63,6 @@
 
     tr:nth-child(odd) {
         background-color: #eee;
-    }
-
-    * {
-        margin: 0px;
-        padding: 0px;
-    }
-
-    body {
-        font-family: arial;
     }
 
     .main {
@@ -78,10 +88,6 @@
         padding: 10px;
     }
 
-    h1 {
-        font-size: 20px;
-    }
-
     .des {
         padding: 10px;
         text-align: center;
@@ -90,17 +96,13 @@
         border-bottom-left-radius: 5px;
         background-color: aliceblue;
     }
-    .sidebar .btn-link{
-    color:white;
-    background-color:blue;
-    margin: 3px;
-    opacity: 1;
-    transition:0.4s;
-}
-.btn-link:hover, .btn-link:focus{
-    opacity: 0.9;
-
-}
+     .redirectbar {
+        margin-top: 10px;
+        margin-left:15px;
+        font-size: large;
+        position: absolute;
+        color: #d63031;
+    }
 </style>
   @* Navbar *@
 <ul class="sidebar">
@@ -108,15 +110,14 @@
         <input type="button"
                value="Admin"
                id="index"
-               style="background-color:white; color: red; text-align:left;"
-               class="btn btn-link btn-lg m-5 p-5"
+               class="btn btn-link btn-md"
                onclick="location.href='@Url.Action("Index", "Admin")'" />
     </li>
     <li class="list">
         <input type="button"
                value="Monthly Attendance Report"
                id="viewAllEmployeeAttendance"
-               class="btn btn-link btn-lg m-5 p-5"
+               class="btn btn-link btn-md"
                onclick="location.href='@Url.Action("viewAllEmployeeAttendance", "Admin", new {y = year, m = month})'" />
     </li>
 
@@ -124,14 +125,14 @@
         <input type="button"
                value="Employee Info"
                id="manageLogin"
-               class="btn btn-link btn-lg m-5 p-5"
+               class="btn btn-link btn-md"
                onclick="location.href='@Url.Action("manageLogin", "Admin")'" />
     </li>
     <li class="list">
         <input type="button"
                value="Manage Employee Leave"
                id="leave"
-               class="btn btn-link btn-lg m-5 p-5"
+               class="btn btn-link btn-md"
                onclick="location.href='@Url.Action("Leave", "Admin")'" />
     </li>
     <li class="list">
@@ -139,13 +140,13 @@
                value="Log Out!"
                id="logout"
                style="background-color:#170e0e; color:white"
-               class="btn btn-link btn-lg m-5 p-5"
+               class="btn btn-link btn-md"
                onclick="location.href='@Url.Action("logout", "Admin")'" />
     </li>
 </ul>
 @* SIDEBAR NAVIGATION END!! *@
     <center>
-        <h1>@ViewBag.name (@ViewBag.empId)</h1>
+        <h2>@ViewBag.name (@ViewBag.empId)</h2>
         <h3> All Time Report</h3>
     </center>
   
@@ -241,6 +242,8 @@
 
 
     </div>
-
+<div class="redirectbar">
+    @Html.ActionLink("Back to Manage Login", "manageLogin", "Admin", null, null)
+</div>
 
 
