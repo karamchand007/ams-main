@@ -6,7 +6,7 @@
     }
     .sidebar{
         padding: 5px;
-        background-color:#f39c12; /*#e67e22;*/
+        background-color:#f39c12;  /*#e67e22;*/
         display:flex;
         flex-direction:row;
         justify-content:space-around;

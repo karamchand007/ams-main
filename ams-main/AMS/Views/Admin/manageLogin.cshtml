@@ -10,6 +10,10 @@
 <link href="~/Content/viewAtdReport.css" rel="stylesheet" />
 <link href="~/Content/aminPanal.css" rel="stylesheet" />
 <style>
+    .create{
+        color:#d1ccc0;
+        text-decoration:none;
+    }
     .atd-table p{
         text-align:left;
         font-weight:bolder;
@@ -73,7 +77,7 @@
         <h2>Employee Login Details</h2>
         <hr width="60%"/>
         <p>
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Create New", "Create",null, new { @class = "create"})
         </p>
         <table class="table table-striped">
             <tr>

@@ -33,38 +33,3 @@ C:\Users\nitis\Desktop\AMS-project\Code\AMS\AMS\bin\System.Web.Mvc.xml
 C:\Users\nitis\Desktop\AMS-project\Code\AMS\AMS\obj\Debug\AMS.csprojResolveAssemblyReference.cache
 C:\Users\nitis\Desktop\AMS-project\Code\AMS\AMS\obj\Debug\AMS.dll
 C:\Users\nitis\Desktop\AMS-project\Code\AMS\AMS\obj\Debug\AMS.pdb
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\roslyn\csc.exe
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\roslyn\Microsoft.CodeAnalysis.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\roslyn\Microsoft.CSharp.Core.targets
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\roslyn\System.Collections.Immutable.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\roslyn\System.Reflection.Metadata.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\roslyn\vbc.exe
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\roslyn\VBCSCompiler.exe
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\roslyn\VBCSCompiler.exe.config
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\AMS.dll.config
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\AMS.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\AMS.pdb
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\DataAccessLayer.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\Microsoft.Web.Infrastructure.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\System.Web.Helpers.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\System.Web.Mvc.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\System.Web.Razor.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\System.Web.Webpages.Deployment.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\System.Web.Webpages.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\System.Web.Webpages.Razor.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\DataAccessLayer.pdb
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\System.Web.Razor.xml
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\System.Web.Webpages.xml
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\System.Web.Webpages.Deployment.xml
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\System.Web.Webpages.Razor.xml
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\System.Web.Helpers.xml
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\bin\System.Web.Mvc.xml
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\obj\Debug\AMS.csprojResolveAssemblyReference.cache
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\obj\Debug\AMS.dll
-F:\AMS Project\Modules3\ams-main\ams-main\AMS\obj\Debug\AMS.pdb

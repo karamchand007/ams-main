@@ -3,8 +3,3 @@ C:\Users\nitis\Desktop\AMS-project\Code\AMS\DataAccessLayer\bin\Debug\DataAccess
 C:\Users\nitis\Desktop\AMS-project\Code\AMS\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\nitis\Desktop\AMS-project\Code\AMS\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\nitis\Desktop\AMS-project\Code\AMS\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
-F:\AMS Project\Modules3\ams-main\ams-main\DataAccessLayer\bin\Debug\DataAccessLayer.dll
-F:\AMS Project\Modules3\ams-main\ams-main\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
-F:\AMS Project\Modules3\ams-main\ams-main\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
-F:\AMS Project\Modules3\ams-main\ams-main\DataAccessLayer\obj\Debug\DataAccessLayer.dll
-F:\AMS Project\Modules3\ams-main\ams-main\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
